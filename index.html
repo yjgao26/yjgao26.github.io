@@ -1,1 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="我的 AI 协作实验室：展示 AI Agent 应用、协作实践与个人作品集。"
+    />
+    <title>我的 AI 协作实验室</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="nav container">
+          <div class="brand">
+            <span class="brand-mark">AI</span>
+            <span>协作实验室</span>
+          </div>
 
+          <div class="nav-links">
+            <a href="#agents">Agent</a>
+            <a href="#about">关于</a>
+            <a href="#contact">联系</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container hero-inner">
+            <div class="hero-copy">
+              <div class="eyebrow">探索智能协作的边界</div>
+              <h1>我的 AI 协作实验室</h1>
+              <p class="subtitle">
+                用 AI 设计更高效的工作流，用自动化重构创意与执行的协同方式。
+              </p>
+
+              <div class="cta-row">
+                <a href="#agents" class="primary-btn">查看 Agent</a>
+                <a href="#contact" class="secondary-btn">联系我</a>
+              </div>
+
+              <ul class="mini-stats">
+                <li>
+                  <strong>3+</strong>
+                  <span>核心 AI Agent</span>
+                </li>
+                <li>
+                  <strong>40%</strong>
+                  <span>效率提升</span>
+                </li>
+                <li>
+                  <strong>24/7</strong>
+                  <span>协作支持</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="hero-visual" aria-label="AI lab visualization">
+              <div class="orb orb-one"></div>
+              <div class="orb orb-two"></div>
+              <div class="terminal-panel">
+                <div class="panel-header">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="panel-body">
+                  <div class="code-line"><span class="prompt">></span> build_agents()</div>
+                  <div class="code-line"><span class="prompt">></span> optimize_workflow()</div>
+                  <div class="code-line"><span class="prompt">></span> ship_ideas()</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section container">
+          <div class="section-heading">
+            <p class="eyebrow">关于我</p>
+            <h2>把 AI 变成高效协作伙伴</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card">
+              <h3>创作协同</h3>
+              <p>
+                我热衷于把人工智能融入创意、研发和内容生产流程，探索更自然、更可扩展的协作方式。
+              </p>
+            </div>
+            <div class="about-card">
+              <h3>效率提升</h3>
+              <p>
+                通过任务拆解、自动化执行和知识整合，让重复性工作更少，创造性输出更聚焦。
+              </p>
+            </div>
+            <div class="about-card">
+              <h3>持续迭代</h3>
+              <p>
+                每个 Agent 都像一个实验对象，我不断优化它们的角色边界，让协作系统更稳定、更智能。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="agents" class="section agent-section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">核心能力</p>
+              <h2>我正在使用的 3 个 AI Agent</h2>
+            </div>
+
+            <div class="agent-grid">
+              <article class="agent-card">
+                <div class="agent-badge">Agent 01</div>
+                <h3>Research Copilot</h3>
+                <p class="agent-role">用途：市场研究、资料整理与知识扫描</p>
+                <p class="agent-summary">
+                  负责快速搜集行业信息、提炼关键观点，并把散落的材料整合成清晰的研究结论。
+                </p>
+                <div class="agent-effect">
+                  <span>效果</span>
+                  <strong>研究效率提升 2 倍，文档输出时间减少 60%</strong>
+                </div>
+              </article>
+
+              <article class="agent-card">
+                <div class="agent-badge">Agent 02</div>
+                <h3>Code Architect</h3>
+                <p class="agent-role">用途：代码生成、架构评审与开发提效</p>
+                <p class="agent-summary">
+                  负责方案设计、脚手架生成和代码规范检查，帮助我快速实现原型并保持高质量交付。
+                </p>
+                <div class="agent-effect">
+                  <span>效果</span>
+                  <strong>迭代周期缩短 40%，代码复用率明显提升</strong>
+                </div>
+              </article>
+
+              <article class="agent-card">
+                <div class="agent-badge">Agent 03</div>
+                <h3>Automation Ops</h3>
+                <p class="agent-role">用途：流程自动化、任务编排与日常运营</p>
+                <p class="agent-summary">
+                  负责重复任务自动化、汇总更新和推送整理，确保执行流程更稳定，并释放更多创造时间。
+                </p>
+                <div class="agent-effect">
+                  <span>效果</span>
+                  <strong>每周节省 10–15 小时，例行流程错误率下降 70%</strong>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" class="site-footer">
+        <div class="container footer-inner">
+          <div class="footer-brand">
+            <div class="brand">
+              <span class="brand-mark">AI</span>
+              <span>协作实验室</span>
+            </div>
+            <p>探索智能协作，从每一次小实验开始。</p>
+          </div>
+
+          <div class="footer-contact">
+            <h4>联系我</h4>
+            <ul>
+              <li>Email: hello@yourdomain.com</li>
+              <li>GitHub: <a href="https://github.com/yourname" target="_blank" rel="noreferrer">github.com/yourname</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          © <span id="year"></span> My AI Collaboration Lab
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
