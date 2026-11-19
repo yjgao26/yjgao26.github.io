@@ -31,7 +31,7 @@
 
 # 1. 准备数据 (Data Preparation)
 # 注意：这里假设你已经加载了 mnist 数据集
-# x = tf.constant(...) 
+# x = tf.constant(...)
 # target = tf.constant(...)
 
 # 2. 定义模型参数 (Model Parameters)
@@ -51,7 +51,7 @@ for epoch in range(200):
         logits = tf.matmul(hidden, w_out) + b_out
         # 计算损失
         loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=target, logits=logits))
-    
+
     # 反向传播
     gradients = tape.gradient(loss, [w_h, b_h, w_out, b_out])
     optimizer.apply_gradients(zip(gradients, [w_h, b_h, w_out, b_out]))
@@ -61,9 +61,9 @@ print("Training finished.")</code></pre>
     <!-- 结果展示区域 -->
     <h2>3. Result Visualization</h2>
     <p>The decision boundary learned by the MLP:</p >
-    
+
     <!-- 只要你的仓库里有一张叫 mlp_result.png 的图片，它就会显示在这里 -->
-    < img src="mlp_result.png" alt="MLP Decision Boundary Result">
+    <img src="mlp_result.png" alt="MLP Decision Boundary Result">
 
 </body>
 </html>
