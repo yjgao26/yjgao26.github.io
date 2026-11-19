@@ -176,3 +176,24 @@ footer {
     .hero h1 { font-size: 2rem; }
     .grid-2 { grid-template-columns: 1fr; }
 }
+
+/* 首页按钮组布局 */
+.hero-buttons {
+    display: flex;          /* 让按钮横向排列 */
+    justify-content: center; /* 居中对齐 */
+    gap: 20px;              /* 两个按钮中间的间距 */
+    margin-top: 30px;       /* 按钮距离上方文字的间距 */
+}
+
+/* 手机端适配：屏幕太窄时自动换行 */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column; /* 手机上改为上下排列 */
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;        /* 手机上按钮宽一点好点 */
+        max-width: 200px;   /* 限制最大宽度 */
+    }
+}
