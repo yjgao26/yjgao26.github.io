@@ -14,7 +14,7 @@
 <body>
 
     <!-- 返回按钮 -->
-    <a href=" " class="back-btn">← 返回首页</a >
+    <a href="index.html" class="back-btn">← 返回首页</a >
 
     <h1>Assignment 2: MLP Implementation</h1>
     
@@ -56,7 +56,7 @@ print("Training finished.")
     <p>The decision boundary learned by the MLP:</p >
     
     <!-- 图片展示区域 -->
-    < img src="mlp_result.png" alt="MLP Decision Boundary">
+    <img src="mlp_result.png" alt="MLP Decision Boundary">
 
     <h2>4. Conclusion</h2>
     <p>The model successfully classified all four XOR samples correctly after training.</p >
