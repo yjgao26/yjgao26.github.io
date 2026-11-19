@@ -2,64 +2,68 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>MLP Assignment 2</title>
+    <title>MLP Assignment 2 - Implementation</title>
     <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
-        h1 { border-bottom: 1px solid #ccc; padding-bottom: 10px; }
-        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        img { max-width: 100%; height: auto; border: 1px solid #ddd; margin-top: 20px; }
-        .back-btn { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #0366d6; font-weight: bold; }
+        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { margin-top: 30px; color: #555; }
+        /* 专门用来显示你的 Python 代码的样式 */
+        pre { background: #f6f8fa; padding: 15px; border-radius: 6px; overflow-x: auto; border: 1px solid #e1e4e8; }
+        code { font-family: Consolas, "Courier New", monospace; font-size: 14px; color: #24292e; }
+        img { max-width: 100%; height: auto; border: 1px solid #ddd; margin-top: 10px; border-radius: 4px; }
     </style>
 </head>
 <body>
 
-    <!-- 返回按钮 -->
-    <a href="index.html" class="back-btn">← 返回首页</a>
-
+    <!-- 标题区域 -->
     <h1>Assignment 2: MLP Implementation</h1>
-    
+    <p><strong>Name:</strong> Your Name Here</p > <!-- 你可以在这里把名字改成你自己的 -->
+
+    <!-- 任务描述 -->
     <h2>1. Task Description</h2>
-    <p>Implement a 2-2-1 structure MLP network from scratch using TensorFlow to solve the XOR classification problem.</p>
+    <p>Implement a simple Multi-Layer Perceptron (MLP) network from scratch using TensorFlow to solve the MNIST classification problem.</p >
 
+    <!-- 核心代码展示区域 -->
     <h2>2. Core Code</h2>
-    <p>Below is the key training loop:</p >
-    
-    <!-- 代码展示区域 -->
-    <pre><code>import tensorflow as tf
+    <p>Below is the key training loop implemented in Python:</p >
 
-# 数据准备
-x = tf.constant([[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]], dtype=tf.float64)
-target = tf.constant([[0.0], [1.0], [1.0], [0.0]], dtype=tf.float64)
+<pre><code>import tensorflow as tf
 
-# 模型参数初始化
-W = tf.Variable(tf.random.normal([2, 2], dtype=tf.float64))
-b_hidden = tf.Variable(tf.zeros([2], dtype=tf.float64))
-v = tf.Variable(tf.random.normal([2, 1], dtype=tf.float64))
-b_output = tf.Variable(tf.zeros([1], dtype=tf.float64))
+# 1. 准备数据 (Data Preparation)
+# 注意：这里假设你已经加载了 mnist 数据集
+# x = tf.constant(...) 
+# target = tf.constant(...)
 
-optimizer = tf.keras.optimizers.Adam(learning_rate=0.05)
+# 2. 定义模型参数 (Model Parameters)
+# w_h = tf.Variable(tf.random.normal([28*28, 128], dtype=tf.float64))
+# b_h = tf.Variable(tf.zeros([128], dtype=tf.float64))
+# w_out = tf.Variable(tf.random.normal([128, 10], dtype=tf.float64))
+# b_out = tf.Variable(tf.zeros([10], dtype=tf.float64))
 
-# 训练循环
-for epoch in range(300):
+# 3. 定义优化器 (Optimizer)
+optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
+
+# 4. 训练循环 (Training Loop)
+for epoch in range(200):
     with tf.GradientTape() as tape:
-        hidden = tf.sigmoid(tf.matmul(x, W) + b_hidden)
-        logits = tf.matmul(hidden, v) + b_output
-        loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(labels=target, logits=logits))
+        # 前向传播
+        hidden = tf.nn.relu(tf.matmul(x, w_h) + b_h)
+        logits = tf.matmul(hidden, w_out) + b_out
+        # 计算损失
+        loss = tf.reduce_mean(tf.nn.sparse_softmax_cross_entropy_with_logits(labels=target, logits=logits))
     
-    gradients = tape.gradient(loss, [W, b_hidden, v, b_output])
-    optimizer.apply_gradients(zip(gradients, [W, b_hidden, v, b_output]))
+    # 反向传播
+    gradients = tape.gradient(loss, [w_h, b_h, w_out, b_out])
+    optimizer.apply_gradients(zip(gradients, [w_h, b_h, w_out, b_out]))
 
-print("Training finished.")
-</code></pre>
+print("Training finished.")</code></pre>
 
+    <!-- 结果展示区域 -->
     <h2>3. Result Visualization</h2>
     <p>The decision boundary learned by the MLP:</p >
     
-    <!-- 图片展示区域 -->
-    <img src="mlp_result.png" alt="MLP Decision Boundary">
-
-    <h2>4. Conclusion</h2>
-    <p>The model successfully classified all four XOR samples correctly after training.</p >
+    <!-- 只要你的仓库里有一张叫 mlp_result.png 的图片，它就会显示在这里 -->
+    < img src="mlp_result.png" alt="MLP Decision Boundary Result">
 
 </body>
 </html>
