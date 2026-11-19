@@ -14,12 +14,12 @@
 <body>
 
     <!-- 返回按钮 -->
-    <a href="index.html" class="back-btn">← 返回首页</a >
+    <a href="index.html" class="back-btn">← 返回首页</a>
 
     <h1>Assignment 2: MLP Implementation</h1>
     
     <h2>1. Task Description</h2>
-    <p>Implement a 2-2-1 structure MLP network from scratch using TensorFlow to solve the XOR classification problem.</p >
+    <p>Implement a 2-2-1 structure MLP network from scratch using TensorFlow to solve the XOR classification problem.</p>
 
     <h2>2. Core Code</h2>
     <p>Below is the key training loop:</p >
